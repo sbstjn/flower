@@ -1,0 +1,32 @@
+{
+    "name": "sbstjn/flower",
+    "description": "Request flow controller",
+    "keywords": [
+        "router",
+        "request",
+        "response"
+    ],
+    "homepage": "https://github.com/sbstjn/flower",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sebastian Müller",
+            "email": "mail@sbstjn.com",
+            "homepage": "http://sbstjn.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : ">=5.4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "4.*",
+        "scrutinizer/ocular": "~1.1"
+    },
+    "autoload": {
+        "files": ["load.php"]
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}
