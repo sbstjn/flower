@@ -1,4 +1,4 @@
-<p align="center"><strong>PHP HTTP request flow controller</strong></p>
+<p align="center"><strong>HTTP request flow controller</strong></p>
 <p align="center">
     <a href="https://circleci.com/gh/sbstjn/flower/"><img src="https://img.shields.io/circleci/project/sbstjn/flower/master.svg" alt="Circle CI"></a> 
     <a href="https://travis-ci.org/sbstjn/flower"><img src="https://img.shields.io/travis/sbstjn/flower.svg" alt="Travis CI"></a> 
