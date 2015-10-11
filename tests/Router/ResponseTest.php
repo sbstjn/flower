@@ -9,7 +9,7 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
      */
     public function testHandling()
     {
-        new \Flower\Router\Response();
+        $Response = new \Flower\Router\Response();
 
         $this->assertTrue(true);
     }

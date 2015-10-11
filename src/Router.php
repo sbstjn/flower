@@ -75,9 +75,9 @@ class Router
      * Initialize Router
      *
      */
-    public function __construct(Router\Response $response)
+    public function __construct()
     {
-        $this->setResponse($response);
+
     }
 
     /**

@@ -16,25 +16,26 @@ class RouterTest extends \PHPUnit_Framework_TestCase
             'HTTPS'             => 'on'
         );
 
-        $Router = new \Flower\Router(new \Flower\Router\Response());
-        $Router->setRequest(\Flower\Router\Request::parseFromEnvironment($ENV));
+        $Response = new \Flower\Router\Response();
+        $Request  = \Flower\Router\Request::parseFromEnvironment($ENV);
+
+        $Router = new \Flower\Router();
+        $Router->setRequest($Request);
+        $Router->setResponse($Response);
 
         $RouteFirst = $this->getMock('Route', array('match', 'call'));
         $RouteFirst->expects($this->once())->method('match')->will($this->returnValue(true));
         $RouteFirst->expects($this->once())->method('call');
-
         $Router->addRoute($RouteFirst);
 
         $RouteSecond = $this->getMock('Route', array('match', 'call'));
         $RouteSecond->expects($this->once())->method('match')->will($this->returnValue(false));
         $RouteSecond->expects($this->never())->method('call');
-
         $Router->addRoute($RouteSecond);
 
         $RouteThird = $this->getMock('Route', array('match', 'call'));
         $RouteThird->expects($this->once())->method('match')->will($this->returnValue(true));
         $RouteThird->expects($this->once())->method('call');
-
         $Router->addRoute($RouteThird);
 
         $Router->check();
