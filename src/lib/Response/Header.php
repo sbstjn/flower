@@ -7,9 +7,9 @@ class Header
     /**
      * Apply Header object
      *
-     * @param Header\Base $object
+     * @param \Flower\Response\Header\Base $object
      */
-    public function apply(Header\Base $object)
+    public function apply(\Flower\Response\Header\Base $object)
     {
         header($object);
     }

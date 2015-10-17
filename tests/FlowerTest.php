@@ -21,17 +21,17 @@ class FlowerTest extends \PHPUnit_Framework_TestCase
         $Router->setRequest($Request);
         $Router->setResponse($Response);
 
-        $RouteFirst = $this->getMock('Route', array('match', 'call'));
+        $RouteFirst = $this->getMockBuilder('\Flower\Route')->disableOriginalConstructor()->getMock();
         $RouteFirst->expects($this->once())->method('match')->will($this->returnValue(true));
         $RouteFirst->expects($this->once())->method('call');
         $Router->addRoute($RouteFirst);
 
-        $RouteSecond = $this->getMock('Route', array('match', 'call'));
+        $RouteSecond = $this->getMockBuilder('\Flower\Route')->disableOriginalConstructor()->getMock();
         $RouteSecond->expects($this->once())->method('match')->will($this->returnValue(false));
         $RouteSecond->expects($this->never())->method('call');
         $Router->addRoute($RouteSecond);
 
-        $RouteThird = $this->getMock('Route', array('match', 'call'));
+        $RouteThird = $this->getMockBuilder('\Flower\Route')->disableOriginalConstructor()->getMock();
         $RouteThird->expects($this->once())->method('match')->will($this->returnValue(true));
         $RouteThird->expects($this->once())->method('call');
         $Router->addRoute($RouteThird);

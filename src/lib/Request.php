@@ -58,9 +58,9 @@ class Request
     /**
      * Set URL object
      *
-     * @param Request\URL $url
+     * @param \Flower\Request\URL $url
      */
-    private function setURL(Request\URL $url)
+    private function setURL(\Flower\Request\URL $url)
     {
         $this->url = $url;
     }
@@ -89,9 +89,9 @@ class Request
     /**
      * Set Request Session
      *
-     * @param Request\Session $session
+     * @param \Flower\Request\Session $session
      */
-    private function setSession(Request\Session $session)
+    private function setSession(\Flower\Request\Session $session)
     {
         $this->session = $session;
     }
@@ -109,9 +109,9 @@ class Request
     /**
      * Set matched Route
      *
-     * @param Route $route
+     * @param \Flower\Route $route
      */
-    public function setRoute(Route $route)
+    public function setRoute(\Flower\Route $route)
     {
         $this->route = $route;
     }
@@ -131,7 +131,7 @@ class Request
      *
      * @param string $method ;
      */
-    private function setMethod(Request\Method $method)
+    private function setMethod(\Flower\Request\Method $method)
     {
         $this->method = $method;
     }
