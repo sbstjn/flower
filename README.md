@@ -20,9 +20,7 @@ $ composer require sbstjn/flower
 
 ## Usage
 
-``` php
-$flow = new Flower();
-```
+Work in progress! Please see included test cases for current non-final handling …
 
 ## Change log
 
