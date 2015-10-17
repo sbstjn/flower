@@ -1,6 +1,8 @@
 <?php
 
-class Flower
+namespace Flower;
+
+class Router
 {
     /**
      * Flower Request object

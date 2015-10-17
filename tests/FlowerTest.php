@@ -17,7 +17,7 @@ class FlowerTest extends \PHPUnit_Framework_TestCase
         $Response = new \Flower\Response();
         $Request  = \Flower\Request::parseFromEnvironment($ENV);
 
-        $Router = new \Flower();
+        $Router = new \Flower\Router();
         $Router->setRequest($Request);
         $Router->setResponse($Response);
 
