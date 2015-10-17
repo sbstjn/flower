@@ -27,6 +27,6 @@
         "files": ["load.php"]
     },
     "scripts": {
-        "test": "phpunit"
+        "test": "phpunit tests"
     }
 }
