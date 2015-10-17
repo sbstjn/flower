@@ -9,7 +9,7 @@ class Response
      */
     public function __construct()
     {
-        $this->header = new Response\Header();
+        $this->header = new \Flower\Response\Header();
     }
 
     /**
@@ -19,7 +19,7 @@ class Response
      */
     public function status($code)
     {
-        $this->header->apply(new Response\Header\Status($code));
+        $this->header->apply(new \Flower\Response\Header\Status($code));
     }
 
     /**
@@ -28,10 +28,10 @@ class Response
      * @param $url target
      * @param int $status
      */
-    public function redirect($url, $status = Response\Header\Status::HTTP_302)
+    public function redirect($url, $status = \Flower\Response\Header\Status::HTTP_302)
     {
-        $this->header->apply(new Response\Header\Status($status));
-        $this->header->apply(new Response\Header\Location($url));
+        $this->header->apply(new \Flower\Response\Header\Status($status));
+        $this->header->apply(new \Flower\Response\Header\Location($url));
 
         die();
     }
@@ -43,6 +43,6 @@ class Response
      */
     public function type($type)
     {
-        $this->header->apply(new Response\Header\ContentType($type));
+        $this->header->apply(new \Flower\Response\Header\ContentType($type));
     }
 }

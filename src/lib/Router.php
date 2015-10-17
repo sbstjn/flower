@@ -34,7 +34,7 @@ class Router
     }
 
     /**
-     * @return null|Flower\Request
+     * @return null|\Flower\Request
      */
     public function getRequest()
     {
@@ -42,15 +42,15 @@ class Router
     }
 
     /**
-     * @param null|Flower\Request $request
+     * @param \Flower\Request $request
      */
-    public function setRequest($request)
+    public function setRequest(\Flower\Request $request)
     {
         $this->request = $request;
     }
 
     /**
-     * @return null|Flower\Response
+     * @return null|\Flower\Response
      */
     public function getResponse()
     {
@@ -58,9 +58,9 @@ class Router
     }
 
     /**
-     * @param null|Flower\Response $response
+     * @param \Flower\Response $response
      */
-    public function setResponse($response)
+    public function setResponse(\Flower\Response $response)
     {
         $this->response = $response;
     }
@@ -83,7 +83,7 @@ class Router
      */
     public function register($method, $route, $callback)
     {
-        array_push($this->routes, new Flower\Route($method, $route, $callback));
+        array_push($this->routes, new \Flower\Route($method, $route, $callback));
     }
 
     /**
@@ -91,7 +91,7 @@ class Router
      *
      * @param Route $route
      */
-    public function addRoute($route) {
+    public function addRoute(\Flower\Route $route) {
         array_push($this->routes, $route);
     }
 

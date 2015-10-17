@@ -52,7 +52,7 @@ class Route
     /**
      * Set HTTP method
      *
-     * @param strign $method
+     * @param string $method
      */
     public function setMethod($method)
     {
@@ -102,10 +102,10 @@ class Route
     /**
      * Check if Route matches Request
      *
-     * @param Request $req
+     * @param \Flower\Request $req
      * @return bool
      */
-    public function match(Request $req)
+    public function match(\Flower\Request $req)
     {
         return $this->matchMethod($req) && ($this->matchStatic($req) || $this->matchRegexp($req));
     }
@@ -133,7 +133,7 @@ class Route
     /**
      * Check if route matches request method
      */
-    private function matchMethod(Request $req)
+    private function matchMethod(\Flower\Request $req)
     {
         return strtolower($this->getMethod()) === strtolower($req->getMethod());
     }
@@ -144,7 +144,7 @@ class Route
      * @param Request $req
      * @return bool
      */
-    private function matchStatic(Request $req)
+    private function matchStatic(\Flower\Request $req)
     {
         return $this->isStatic() && $req->url()->path() === $this->getRoute();
     }
@@ -155,7 +155,7 @@ class Route
      * @param Request $req
      * @return bool
      */
-    private function matchRegexp(Request $req)
+    private function matchRegexp(\Flower\Request $req)
     {
         return $this->isRegexp() && preg_match($this->toRegexp(), $req->url()->path(), $matches);
     }
@@ -189,7 +189,7 @@ class Route
      * @param Request $req
      * @param Response $res
      */
-    public function call(Request $req, Response $res)
+    public function call(\Flower\Request $req, Response $res)
     {
         $req->setRoute($this);
         $callback = $this->getCallback();
